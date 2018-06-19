@@ -1,0 +1,8 @@
+# packages
+/vendor
+
+# bin files
+/bin
+/pkg
+/src/github.com
+/src/golang.org
