@@ -15,7 +15,7 @@ import (
 )
 
 // TCPSocketClient sends http request
-// to be compatible with keep-alive
+// its request is compatible with keep-alive
 func TCPSocketClient() {
 	sendMessages := []string{
 		"PIYO",

@@ -5,9 +5,9 @@ import (
 	"os"
 )
 
-// FetchOSCreate fetch os.Create
+// FetchOSCreate in which I try to fetch os.Create
 func FetchOSCreate() {
-	// trace definition od `os.Create()`
+	// trace definition of `os.Create()` (the result is written below)
 	file, err := os.Create("test.txt")
 	if err != nil {
 		panic(err)

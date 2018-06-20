@@ -7,7 +7,7 @@ import (
 	"time"
 )
 
-// FormatTime send time to Stdout
+// FormatTime sends time to stdout
 func FormatTime() {
 	fmt.Fprintf(os.Stdout, "Write with os.Stdout at %v", time.Now())
 }

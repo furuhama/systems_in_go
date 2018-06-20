@@ -10,7 +10,7 @@ import (
 	"os"
 )
 
-// TCPConnect make connection by tcp & returns its result in Stdout
+// TCPConnect makes connection by tcp protocol & returns its result to stdout
 func TCPConnect() {
 	conn, err := net.Dial("tcp", "furuhama.github.io:80")
 	if err != nil {
@@ -24,13 +24,13 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	w.Write([]byte("http.ResponseWriter sample"))
 }
 
-// Handling set local server
+// Handling stands up local server
 func Handling() {
 	http.HandleFunc("/", handler)
 	http.ListenAndServe(":8000", nil)
 }
 
-// HandleHTML is extended `Handling()`, parse HTML
+// HandleHTML is extended ver `Handling()`, which parses HTML string
 func HandleHTML() {
 	conn, err := net.Dial("tcp", "furuhama.github.io:80")
 	if err != nil {

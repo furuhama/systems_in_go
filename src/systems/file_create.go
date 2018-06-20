@@ -10,7 +10,7 @@ import (
 	"os"
 )
 
-// CreateText is making txt file & write byte data in it
+// CreateText makes .txt file & writes byte-typed data in it
 func CreateText() {
 	file, err := os.Create("test.txt")
 	if err != nil {
@@ -20,19 +20,19 @@ func CreateText() {
 	file.Close()
 }
 
-// StdOut send Stdout to example texts
+// StdOut sends example texts to stdout
 func StdOut() {
 	os.Stdout.Write([]byte("os.Stdout example\n"))
 }
 
-// Buffer put byte data into buffer, and send it to Stdout
+// Buffer puts byte-typed data into buffer, and sends it to stdout
 func Buffer() {
 	var buffer bytes.Buffer
 	buffer.Write([]byte("bytes.Buffer example\n"))
 	fmt.Println(buffer.String())
 }
 
-// FlushBuf uses Buffer and flush its data
+// FlushBuf uses buffer(write some texts) and flushes written data
 func FlushBuf() {
 	buffer := bufio.NewWriter(os.Stdout)
 	buffer.WriteString("bufio.Writer ")
@@ -41,7 +41,7 @@ func FlushBuf() {
 	buffer.Flush()
 }
 
-// MakeCopy reads exist file and make a copy
+// MakeCopy reads an existing file and makes a copy
 func MakeCopy() {
 	oldFile, err := os.Open("hello.txt")
 	if err != nil {

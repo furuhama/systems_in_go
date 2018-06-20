@@ -11,7 +11,7 @@ import (
 	"strings"
 )
 
-// ReadStdio reads Std input & return it
+// ReadStdio reads stdin & returns it to stdout(just prints its data)
 func ReadStdio() {
 	fmt.Println("return input")
 	for {
@@ -25,7 +25,7 @@ func ReadStdio() {
 	}
 }
 
-// OpenFile opens file & copy data to Stdout
+// OpenFile opens a file & makes a copy data to stdout
 func OpenFile() {
 	file, err := os.Open("hello.txt")
 	if err != nil {
@@ -35,7 +35,7 @@ func OpenFile() {
 	io.Copy(os.Stdout, file)
 }
 
-// ReadOnlyHead reads only first some bytes of given data
+// ReadOnlyHead reads only some bytes from the head of given data
 func ReadOnlyHead() {
 	reader := strings.NewReader("Example of io.SectionReader\n")
 	sectionReader := io.NewSectionReader(reader, 14, 7)
@@ -77,7 +77,7 @@ func readChunks(file *os.File) []io.Reader {
 	return chunks
 }
 
-// ReadPNGChunck reads PNG bytes and return it as a chunks
+// ReadPNGChunck reads PNG bytes and returns it as a bulk of chunk
 func ReadPNGChunck() {
 	file, err := os.Open("Lenna2.png")
 	if err != nil {
